@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Real-Time Analytics</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; background-color: #f0f2f5; }
+        .container { text-align: center; background: white; padding: 50px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        h1 { color: #1c1e21; }
+        p { color: #606770; margin-bottom: 25px; }
+        button { background-color: #1877f2; color: white; border: none; padding: 15px 32px; font-size: 16px; font-weight: bold; border-radius: 6px; cursor: pointer; transition: background-color 0.2s; }
+        button:hover { background-color: #166fe5; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>User Engagement Analytics</h1>
+    <p>Your interaction is valuable. Click the button below to register an event.</p>
+    <button onclick="registerClick()">Register Click</button>
+</div>
+
+<script>
+    function registerClick() {
+        fetch('/register-click', { method: 'POST' })
+            .then(response => {
+                if (response.ok) {
+                    console.log('Click registered successfully!');
+                }
+            })
+            .catch(error => console.error('Error:', error));
+    }
+</script>
+</body>
+</html>
